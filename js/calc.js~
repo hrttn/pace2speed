@@ -198,14 +198,14 @@ time_10000.onkeyup = function(){
 
 
 time_half.onkeyup = function(){
-	var time_hm = +Number(parse_time(time_half.value)) || 0;
+	var time_hm = +Number(parse_time_long(time_half.value)) || 0;
 	var pace_k = Math.round(time_hm / 21.1);
 	sender = 'half';
 	pace_k_calc(pace_k, sender);
 };
 
 time_marathon.onkeyup = function(){
-	var time_full = +Number(parse_time(time_marathon.value)) || 0;
+	var time_full = +Number(parse_time_long(time_marathon.value)) || 0;
 	var pace_k = Math.round(time_full / 42.195);
 	sender = 'marathon';
 	pace_k_calc(pace_k, sender);

@@ -6,8 +6,11 @@
   
   <title>Pace to speed</title>
   <meta name="description" content="Get your pace from your speed and times in most popular distance">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material-wfont.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Material Design for Bootstrap -->
+  <link href="bt/dist/css/material-wfont.min.css" rel="stylesheet">
+  <link href="bt/dist/css/ripples.min.css" rel="stylesheet">
   
 </head>
 
@@ -17,73 +20,149 @@
   <p>Enter any of the fields below and the other fields will adjust automatically. Have fun and good run!</p>
   <form class="form-horizontal" role="form">
 	  <h2>Your pace</h2>
-    <div class="form-group text-center">
+    <div class="form-group">
         <label for="pace_mile" class="col-sm-offset-2 col-sm-2 control-label">Pace per mile:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="pace_mile" placeholder="Pace per mile (mm:ss)">
+        <input type="text" class="form-control" id="pace_mile" data-hint="Pace per mile (mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
       <label for="pace_km" class="col-sm-offset-2 col-sm-2 control-label">Pace per kilometer:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="pace_km" placeholder="Pace per kilometer (mm:ss)">
+        <input type="text" class="form-control" id="pace_km" data-hint="Pace per kilometer (mm:ss)">
       </div>
     </div>
 	  <h2>Your Speed</h2>
 	  <div class="form-group">
       <label for="speed_mph" class="col-sm-offset-2 col-sm-2 control-label">Speed (mph):</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="speed_mph" placeholder="Speed in miles per hour">
+        <input type="text" class="form-control" id="speed_mph" data-hint="Speed in miles per hour">
       </div>
-      <label class="col-sm-1 control-label">mph</label>
     </div>
 	  <div class="form-group">
       <label for="speed_kph" class="col-sm-offset-2 col-sm-2 control-label">Speed (kph):</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="speed_kph" placeholder="Speed in kilometers per hour">
+        <input type="text" class="form-control" id="speed_kph" data-hint="Speed in kilometers per hour">
       </div>
-      <label class="col-sm-1 control-label">kph</label>
+    </div>
+    <h2>Custom distance</h2>
+	  <div class="form-group">
+      <label for="cust_distance" class="col-sm-offset-2 col-sm-2 control-label">Distance:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="cust_distance" data-hint="Choose a distance">
+      </div>
+      <div class="col-sm-2">
+        <select name="cust_unit" id="cust_unit">
+          <option value="meter">meters</option>
+          <option value="mile">miles</option>
+          <option value="kilometer">kilometers</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pace_km" class="col-sm-offset-2 col-sm-2 control-label">Time:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="cust_time" data-hint="Enter the time (mm:ss)">
+      </div>
     </div>
 	  <h2>Your time on popular distances</h2>
 	  <div class="form-group">
       <label for="time_1500" class="col-sm-offset-2 col-sm-2 control-label">1500 m:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_1500" placeholder="Time for 1500m (mm:ss)">
+        <input type="text" class="form-control" id="time_1500" data-hint="Time for 1500m (mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
       <label for="time_3000" class="col-sm-offset-2 col-sm-2 control-label">3000 m:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_3000" placeholder="Time for 3000m (mm:ss)">
+        <input type="text" class="form-control" id="time_3000" data-hint="Time for 3000m (mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
       <label for="time_5000" class="col-sm-offset-2 col-sm-2 control-label">5000 m:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_5000" placeholder="Time for 5000m (mm:ss)">
+        <input type="text" class="form-control" id="time_5000" data-hint="Time for 5000m (mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
       <label for="time_10000" class=" col-sm-offset-2 col-sm-2 control-label">10000 m:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_10000" placeholder="Time for 10000m (mm:ss)">
+        <input type="text" class="form-control" id="time_10000" data-hint="Time for 10000m (mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
-      <label for="time_half" class="col-sm-offset-1 col-sm-3 control-label">Half-marathon:</label>
+      <label for="time_half" class="col-sm-offset-2 col-sm-2 control-label">Half-marathon:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_half" placeholder="Time for half-marathon (hh:mm:ss)">
+        <input type="text" class="form-control" id="time_half" data-hint="Time for half-marathon (hh:mm:ss)">
       </div>
     </div>
 	  <div class="form-group">
       <label for="time_marathon" class="col-sm-offset-2 col-sm-2 control-label">Marathon:</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="time_marathon" placeholder="Time for marathon (hh:mm:ss)">
+        <input type="text" class="form-control" id="time_marathon" data-hint="Time for marathon (hh:mm:ss)">
       </div>
     </div>
   </form>
-</div>
 
+  <table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>Pace per mile</th>
+            <th>Pace per kilometer</th>
+            <th>Speed(mph)</th>
+            <th>Speed(kph)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>10:00</td>
+            <td>06:13</td>
+            <td>6</td>
+            <td>9.65</td>
+        </tr>
+        <tr>
+            <td>09:30</td>
+            <td>05:54</td>
+            <td>6.32</td>
+            <td>10.17</td>
+        </tr>
+        <tr>
+            <td>09:00</td>
+            <td>05:36</td>
+            <td>6.66</td>
+            <td>10.71</td>
+        </tr>
+        <tr>
+            <td>08:30</td>
+            <td>05:17</td>
+            <td>7.06</td>
+            <td>11.36</td>
+        </tr>
+        <tr>
+            <td>08:00</td>
+            <td>04:58</td>
+            <td>7.51</td>
+            <td>12.08</td>
+        </tr>
+          <tr>
+            <td>07:30</td>
+            <td>04:40</td>
+            <td>8</td>
+            <td>12.86</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/fonts/Material-Design-Icons.svg"></script>
+    <!-- Material Design for Bootstrap -->
+    <script src="bt/dist/js/material.min.js"></script>
+    <script src="bt/dist/js/ripples.min.js"></script>
+    <script>
+      $.material.init();
+    </script>
   <script src="js/calc.js"></script>
 </body>
 </html>
